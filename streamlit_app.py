@@ -45,7 +45,7 @@ if ingredients_list:
         st.success('Your Smoothie is ordered, '+name_on_order+'!', icon="✅")
 
  # New section to display smoothiefroot nutrition information
-if ingreients_list:
+if ingredients_list:
     ingredients_string = ''
 
     for fruit_chosen in ingredients_list:
