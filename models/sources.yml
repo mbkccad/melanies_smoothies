@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+    - name: Stage_Covid
+      description: Tables built in stage
+      database: Stage_Covid
+      schema: Stage
+      tables:
+          - name: Stage_State
+            description: One record per state.
+          - name: Stage_County_Information
+            description: County by day/deaths
