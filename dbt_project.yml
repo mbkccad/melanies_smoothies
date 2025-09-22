@@ -38,3 +38,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   CovidDataExample:
       +materialized: table
+
+      #used for stage tables
+      staging:
+        +database: STAGE_COVID
+
+      #dimensions and fact tables
+      marts:
+        +database: EDW_COVID  
