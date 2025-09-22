@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: Dim_State
+    config:
+      alias: dim_state
+      pre_hook: "insert into {{ this }} (State_Name, State_Abbreviation) select State_Name, State_Sbbreviation from {{ ref('Stage_State') }}"
