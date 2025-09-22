@@ -1,13 +1,7 @@
-
-{{ config(
-    materialized='incremental',
-    unique_key='State_Name',
-    incremental_strategy='insert_overwrite',
-    on_schema_change='ignore'
-) }}
+{{ config(materialized='table') }}
 
 select
-    State_Name,
-    State_Abbreviation
+ row_number() over (order by State_Name) as State_ID,
+ State_Name,
+ State_Abbreviation
 from {{ ref('Stage_State') }}
-
