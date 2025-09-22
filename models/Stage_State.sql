@@ -1,0 +1,1 @@
+select State,State_Abbreviation from stage_covid.stage.Stage_State
