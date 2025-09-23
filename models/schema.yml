@@ -2,15 +2,19 @@ version: 2
 
 models:
   - name: Dim_State
+    description: One record per state
     columns:
       - name: State_Name
+        description: unique name of state
         data_tests:
           - unique
           - not_null
       - name: State_ID
+        description: primary key
         data_tests:
           - unique            
   - name: Dim_County
+    description: unique is made by county + state
     columns:
       - name: County_Name
         data_tests:
