@@ -23,3 +23,4 @@ select
  ss.State_Abbreviation
 from {{ ref('Stage_State') }} as ss 
 join distinct_county_name as cc on cc.State = ss.State_Name
+group by cc.County,ss.State_Abbreviation

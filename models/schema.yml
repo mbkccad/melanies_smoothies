@@ -2,6 +2,24 @@ version: 2
 
 models:
   - name: Dim_State
-    config:
-      alias: dim_state
-      pre_hook: "insert into {{ this }} (State_Name, State_Abbreviation) select State_Name, State_Abbreviation from {{ ref('Stage_State') }}"
+    columns:
+      - name: State_Name
+        data_tests:
+          - unique
+          - not_null
+      - name: State_ID
+        data_tests:
+          - unique            
+  - name: Dim_County
+    columns:
+      - name: County_Name
+        data_tests:
+          - not_null
+      - name: State_Abbreviation
+        data_tests:
+          - not_null
+      - name: County_ID
+        data_tests:
+          - unique                    
+                  
+        
